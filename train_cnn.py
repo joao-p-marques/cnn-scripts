@@ -147,5 +147,21 @@ checkpointer = ModelCheckpoint(filepath='model.2.hdf5', verbose=1, save_best_onl
 # fit on data for 30 epochs
 model.fit(train_generator, epochs=30, validation_data=test_generator, callbacks=[checkpointer])
 
+# evaluate the model
+# scores = model.evaluate(X, Y, verbose=0)
+# print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+
+# # model summary
+# print(model.summary())
+
+# serialize model to JSON
+model_json = model.to_json()
+with open("model.json", "w") as json_file:
+    json_file.write(model_json)
+
+# serialize weights to HDF5
+model.save_weights("model.h5")
+print("Saved model to disk")
+
 predict_remote_image(url='https://lmld.org/wp-content/uploads/2012/07/Chocolate-Ice-Cream-3.jpg', model=model, ix_to_class=ix_to_class, debug=True)
 predict_remote_image(url='https://images-gmi-pmc.edge-generalmills.com/75593ed5-420b-4782-8eae-56bdfbc2586b.jpg', model=model, ix_to_class=ix_to_class, debug=True)
