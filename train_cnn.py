@@ -163,5 +163,14 @@ with open("model.json", "w") as json_file:
 model.save_weights("model.h5")
 print("Saved model to disk")
 
+# ice cream (should notwork)
 predict_remote_image(url='https://lmld.org/wp-content/uploads/2012/07/Chocolate-Ice-Cream-3.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# apple pie
 predict_remote_image(url='https://images-gmi-pmc.edge-generalmills.com/75593ed5-420b-4782-8eae-56bdfbc2586b.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+
+# baklava
+predict_remote_image(url='https://www.fifteenspatulas.com/wp-content/uploads/2012/03/Baklava-Fifteen-Spatulas-11.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# apple pie
+predict_remote_image(url='https://images-gmi-pmc.edge-generalmills.com/75593ed5-420b-4782-8eae-56bdfbc2586b.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# beef tartare
+predict_remote_image(url='https://mission-food.com/wp-content/uploads/2020/02/Steak-Tartare-16.jpg', model=model, ix_to_class=ix_to_class, debug=True)
