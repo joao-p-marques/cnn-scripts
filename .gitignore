@@ -1,0 +1,7 @@
+.bash_history
+.cache/
+.keras/
+.local/
+__pycache__/
+food-5/
+model.2.hdf5

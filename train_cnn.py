@@ -103,14 +103,14 @@ test_datagen = ImageDataGenerator(rescale=1.0/255.)
 
 # flow train images in batches of 20 using train_datagen
 train_generator = train_datagen.flow_from_directory(train_dir,
-                                                    batch_size=128,
+                                                    batch_size=64,
                                                     class_mode='categorical',
                                                     shuffle=False,
                                                     target_size=(244, 244))
 
 # flow validation images in batches of 20 using train_datagen 
 test_generator = test_datagen.flow_from_directory(test_dir,
-                                                  batch_size=128,
+                                                  batch_size=64,
                                                   class_mode='categorical',
                                                   shuffle=False,
                                                   target_size=(244, 244))

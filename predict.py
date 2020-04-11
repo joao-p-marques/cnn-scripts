@@ -82,18 +82,23 @@ def predict_image(path, model, ix_to_class, debug=False):
     best_pred = collections.Counter(preds).most_common(1)[0][0]
     print(ix_to_class[best_pred])
 
-# model = load_model(filepath='./model.2.hdf5')
+model = load_model(filepath='./model.2.hdf5')
 
-# class_to_ix = {}
-# ix_to_class = {}
-# with open('food-5/meta/classes.txt', 'r') as txt:
-#     classes = [l.strip() for l in txt.readlines()]
-#     class_to_ix = dict(zip(classes, range(len(classes))))
-#     ix_to_class = dict(zip(range(len(classes)), classes))
-#     class_to_ix = {v: k for k, v in ix_to_class.items()}
-# sorted_class_to_ix = collections.OrderedDict(sorted(class_to_ix.items()))
+class_to_ix = {}
+ix_to_class = {}
+with open('food-5/meta/classes.txt', 'r') as txt:
+    classes = [l.strip() for l in txt.readlines()]
+    class_to_ix = dict(zip(classes, range(len(classes))))
+    ix_to_class = dict(zip(range(len(classes)), classes))
+    class_to_ix = {v: k for k, v in ix_to_class.items()}
+sorted_class_to_ix = collections.OrderedDict(sorted(class_to_ix.items()))
 
-# # predict_remote_image(url='https://lmld.org/wp-content/uploads/2012/07/Chocolate-Ice-Cream-3.jpg', model=model, ix_to_class=ix_to_class, debug=True)
-# # predict_remote_image(url='https://images-gmi-pmc.edge-generalmills.com/75593ed5-420b-4782-8eae-56bdfbc2586b.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# baklava
+predict_remote_image(url='https://www.fifteenspatulas.com/wp-content/uploads/2012/03/Baklava-Fifteen-Spatulas-11.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# apple pie
+predict_remote_image(url='https://images-gmi-pmc.edge-generalmills.com/75593ed5-420b-4782-8eae-56bdfbc2586b.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+# beef tartare
+predict_remote_image(url='https://mission-food.com/wp-content/uploads/2020/02/Steak-Tartare-16.jpg', model=model, ix_to_class=ix_to_class, debug=True)
+
 # predict_image(path='food-5/images/apple_pie/98352.jpg', model=model, ix_to_class=ix_to_class, debug=True)
 # predict_image(path='food-5/images/ice_cream/ice_cream/988684.jpg', model=model, ix_to_class=ix_to_class, debug=True)
